@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>        
+        <link rel="stylesheet" type="text/css" href="css/game-app.css" ></link>
+    </head>
+    <body>
+
+        <div id="game-app" style="padding:1%">
+            <div id="player" >
+                <div class="label"><label for=""><strong>{{playerName}}</strong></label></div>
+                <div class="health" >
+                    <div style="text-align: right" v-bind:style="{width: healthPlayer + '%'}" v-bind:class="{ warning: healthPlayerWarning }" >{{healthPlayer}}%</div>
+                </div>
+                <div class="image-player">
+                    <h1 v-if="winPlayer" style="text-align: center; color:red">Winner</h1>
+                    <img v-bind:src="imgPlayer" class="dead-dragon">                    
+                </div>
+                <div class="controls" v-show="started">
+                    <button v-on:click="attack" v-show="!ended"><u><strong>A</strong></u>ttact </button>        
+                    <button v-bind:disabled="!powerAttackBtn" v-on:click="powerAttack" v-show="!ended"><u><strong>B</strong></u>last ({{powerAttackCount}})</button>        
+                    <button v-bind:disabled="!healBtn" v-on:click="heal" v-show="!ended"><u><strong>H</strong></u>eal ({{healCount}})</button>        
+                    <button v-on:click="restart"><u><strong>R</strong></u>estart</button>        
+                </div>                
+            </div>
+
+            <!-- COMMENTARY -->
+            <div id="commentary" >
+                <div class="label">
+                    <label for=""><strong>Commentary</strong></label>
+                </div>
+                <hr>
+                <div style="display:block;text-align: center;">
+                    <div v-show="!started">
+                        <h1>Settings</h1>
+                        <input type="text" value="" placeholder="Player Name" v-model="playerName" >
+                        <select v-model="difficulty">
+                            <option >Select Difficulty</option>
+                            <option value="2000">Easy</option>
+                            <option value="1000">Medium</option>
+                            <option value="500">Hard</option>
+                            <option value="100">Jedi</option>
+                        </select>                        
+                    </div>
+                            
+                    <button v-on:click="start" v-show="!started">Start</button> 
+                </div>
+                <ul>
+                    <li v-for="commentary in commentaries">
+                        {{commentary.actor}}: {{commentary.action}}
+                    </li>
+                </ul>
+            </div>            
+
+            <!-- DRAGON -->
+            <div id="dragon">
+                <div class="label"><label for=""><strong>Dragon</strong></label></div>
+                <div class="health clear-div-right">
+                    <div v-bind:style="{width: healthDragon + '%'}" v-bind:class="{ warning: healthDragonWarning }" >{{healthDragon}}%</div>
+                </div>    
+                <div class="image-dragon">
+                    <h1 v-if="winDragon" style="text-align: center; color:red">Winner</h1>
+                    <img v-bind:src="imgDragon" >
+                </div>                
+            </div>
+        </div>
+
+    </body>
+
+    <script src="js/game-app.js"></script>
+
+</html>

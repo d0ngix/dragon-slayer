@@ -1,0 +1,125 @@
+
+/* **************************************** PLAYER */
+#player {
+    float: left;
+    width: 40%;
+    background-color: lightblue;
+    height: 100%;
+}
+
+#player .image-player img {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#player .controls {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#player .label {
+    padding: 2%
+}
+
+
+
+/* **************************************** COMMENTARY */
+#commentary {
+    float: left;
+    width: 20%;    
+    background-color: pink;
+    height: 100%;    
+    overflow: scroll;
+
+}
+
+#commentary label, #commentary .label { 
+    text-align: center;
+    padding: 2%;
+}
+
+#commentary ul {
+    padding: 5%;
+}
+
+#commentary ul li { 
+    /* height: 3%; */
+    border-bottom: 1px solid black;
+    list-style: none;
+}
+
+
+/* **************************************** DRAGON */
+#dragon {
+    float: left;
+    width: 40%;
+    background-color: lightblue;
+    height: 100%;    
+}
+
+#dragon .image-dragon img {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#dragon .label {
+    float: right;
+    padding: 2%   
+}
+
+#dragon img.dead-dragon {
+    /* url */
+}
+
+
+/* miscellenous */
+.health {
+    /* width: 80%; */
+    display: block;
+    border: 1px solid #000;
+}
+
+.health div {
+    height: 30px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-decoration: none;  
+}
+
+.health div.warning {
+    background: red;
+}
+
+.clear-div-right {
+    clear: right;
+  }
+
+html {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
