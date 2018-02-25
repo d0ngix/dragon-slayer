@@ -29,21 +29,35 @@ new Vue({
 
     },
     mounted: function (){        
-
         // setInterval (function () {
         //     //if (!this.ended) this.dragonAttack();
         //   }.bind(this) , this.difficulty)
     },
     methods: {
         start: function () {
+            var _this = this;
+            window.addEventListener("keypress", function(e) {
+                var charKey = String.fromCharCode(e.keyCode).toLowerCase();
+                console.log(charKey);
+                if (charKey == 'a' ) {
+                    _this.attack();
+                } else if (charKey == 'b') {
+                    _this.powerAttack();
+                } else if (charKey == 'h') {
+                    _this.heal();
+                } else if (charKey == 'r') {
+                    _this.restart();
+                }
+            });            
+
             setInterval (function () {
                 if (!this.ended) this.dragonAttack();
               }.bind(this) , this.difficulty)
             
               this.started = true;
         },
-        keyupEvent: function(event) {
-                console.log(event.key);
+        keymonitor: function(event) {
+                alert(event.key);
         },
         logAction: function(obj){
             
