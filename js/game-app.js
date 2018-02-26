@@ -56,9 +56,9 @@ new Vue({
             
               this.started = true;
         },
-        keymonitor: function(event) {
-                alert(event.key);
-        },
+        //keymonitor: function(event) {
+        //       alert(event.key);
+        //},
         logAction: function(obj){
             
             if (obj.points == 0) {

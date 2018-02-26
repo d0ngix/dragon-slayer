@@ -1,11 +1,12 @@
 <html>
     <head>
+		<meta charset="UTF-8"> 
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>        
         <link rel="stylesheet" type="text/css" href="css/game-app.css" ></link>
     </head>
     <body >
 
-        <div id="game-app" style="padding:1%" v-on:keyup="keymonitor">
+        <div id="game-app" style="padding:1%" > <!-- v-on:keyup="keymonitor" -->
             <div id="player" >
                 <div class="label"><label for=""><strong>{{playerName}}</strong></label></div>
                 <div class="health" >
