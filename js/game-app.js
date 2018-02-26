@@ -144,6 +144,8 @@ new Vue({
                 this.healCount =  4;
                 this.winDragon = false,
                 this.winPlayer = false
+				this.imgDragon ='img/dragon.png';
+				this.imgPlayer ='img/stickman.png';
             }
 
         },
